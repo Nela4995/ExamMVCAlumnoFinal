@@ -1,0 +1,45 @@
+name: Build And Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  Build-Deploy-Api:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Build
+      run: dotnet build "./14/Net5.Deployment/Net5.Deployment.API" --configuration Release
+    - name: Publish
+      run: dotnet publish "./14/Net5.Deployment/Net5.Deployment.API" -c Release -o Api
+    - name: Run Azure appservice deploy
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: net5-deployment-api
+        publish-profile: ${{ secrets.NET5_DEPLOYMENT_API }}
+        package: ./Api
+  Build-Deploy-Client:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Build
+      run: dotnet build "./14/Net5.Deployment/Net5.Deployment.Client" --configuration Release
+    - name: Publish
+      run: dotnet publish "./14/Net5.Deployment/Net5.Deployment.Client" -c Release -o Client
+    - name: Run Azure appservice deploy
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: net5-deployment-client
+        publish-profile: ${{ secrets.NET5_DEPLOYMENT_CLIENT }}
+        package: ./Client
