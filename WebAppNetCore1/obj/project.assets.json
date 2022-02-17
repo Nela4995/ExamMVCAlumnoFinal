@@ -7153,9 +7153,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\danie\\source\\repos\\RepoAlumnoExam\\WebAppNetCore1\\WebAppNetCore1.csproj",
-      "projectName": "WebAppNetCore1",
-      "projectPath": "C:\\Users\\danie\\source\\repos\\RepoAlumnoExam\\WebAppNetCore1\\WebAppNetCore1.csproj",
+      "projectUniqueName": "C:\\Users\\danie\\source\\repos\\RepoAlumnoExam\\WebAppNetCore1\\AlumnoDeploymentClient.csproj",
+      "projectName": "AlumnoDeploymentClient",
+      "projectPath": "C:\\Users\\danie\\source\\repos\\RepoAlumnoExam\\WebAppNetCore1\\AlumnoDeploymentClient.csproj",
       "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\danie\\source\\repos\\RepoAlumnoExam\\WebAppNetCore1\\obj\\",
       "projectStyle": "PackageReference",

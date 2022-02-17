@@ -30,12 +30,16 @@ namespace ApiAlumnos.Services
         {
 
             services.AddControllers();
+            string connectionString = Configuration.GetConnectionString("ProductConnectionString");
             services.AddDbContext<AlumnosContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(Configuration.GetConnectionString("ProductConnectionString")));
+           
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiAlumnos.Services", Version = "v1" });
             });
+
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,10 +48,12 @@ namespace ApiAlumnos.Services
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiAlumnos.Services v1"));
+               // app.UseSwagger();
+               // app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiAlumnos.Services v1"));
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiAlumnos.Services v1"));
             app.UseHttpsRedirection();
 
             app.UseRouting();

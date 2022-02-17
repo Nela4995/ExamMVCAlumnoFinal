@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+iUgrYhh+YFuhYKvZ5qFt9Yuje9+/Qw9MY4uOK4F11kGAK32tDxI9Y5HpmV39WWgySSDBOjMVE1FUfrilrdE5g==",
+  "dgSpecHash": "Nj54nOCZMUEz1d81PVhey2X8wml7FPgPBLsu9LO6n0/uOLWgWcQEs5JrGldGITrm4Rt/+HYQ3B5JNO2VVfI7RA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\danie\\source\\repos\\RepoAlumnoExam\\WebAppNetCore1\\WebAppNetCore1.csproj",
+  "projectFilePath": "C:\\Users\\danie\\source\\repos\\RepoAlumnoExam\\WebAppNetCore1\\AlumnoDeploymentClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danie\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

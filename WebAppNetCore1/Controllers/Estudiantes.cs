@@ -16,7 +16,7 @@ namespace WebAppNetCore1.Controllers
             List<Alumno> alumnos = new List<Alumno>();
 
             HttpClient clienteHttp = new HttpClient();
-            clienteHttp.BaseAddress = new Uri("https://localhost:44306/api/");
+            clienteHttp.BaseAddress = new Uri("https://net5-deployment-alumno-api.azurewebsites.net/api/");
             var request = clienteHttp.GetAsync("Alumnoes/ListarAlumnos").Result;
 
             if (request.IsSuccessStatusCode)
@@ -32,7 +32,7 @@ namespace WebAppNetCore1.Controllers
             Alumno alumno = new Alumno();
 
             HttpClient clienteHttp = new HttpClient();
-            clienteHttp.BaseAddress = new Uri("https://localhost:44306/api/");
+            clienteHttp.BaseAddress = new Uri("https://net5-deployment-alumno-api.azurewebsites.net/api/");
             var request = clienteHttp.GetAsync("Alumnoes/BuscarAlumno/" +id).Result;
 
             if (request.IsSuccessStatusCode)
@@ -55,7 +55,9 @@ namespace WebAppNetCore1.Controllers
             if (ModelState.IsValid)
             {
                 Request peticion = new Request();
-                string respuesta = peticion.Send("https://localhost:44306/api/" + "Alumnoes/EditarAlumnos", alumno);
+                string respuesta = peticion.Send("https://net5-deployment-alumno-api.azurewebsites.net/api/" + "Alumnoes/EditarAlumnos", alumno);
+                //https://net5-deployment-alumno-api.azurewebsites.net
+                //string respuesta = peticion.Send("https://localhost:44306/api/" + "Alumnoes/EditarAlumnos", alumno);
                 //add el metodo para guardar el archivo
                 // _context.Add(alumno);
                 // await _context.SaveChangesAsync();
@@ -74,7 +76,7 @@ namespace WebAppNetCore1.Controllers
             if (ModelState.IsValid)
             {
                 Request peticion = new Request();
-                string respuesta = peticion.Send("https://localhost:44306/api/" + "Alumnoes/RegistrarAlumnos", alumno);
+                string respuesta = peticion.Send("https://net5-deployment-alumno-api.azurewebsites.net/api/" + "Alumnoes/RegistrarAlumnos", alumno);
                 //add el metodo para guardar el archivo
                 // _context.Add(alumno);
                 // await _context.SaveChangesAsync();
@@ -88,7 +90,7 @@ namespace WebAppNetCore1.Controllers
             Alumno alumno = new Alumno();
 
             HttpClient clienteHttp = new HttpClient();
-            clienteHttp.BaseAddress = new Uri("https://localhost:44306/api/");
+            clienteHttp.BaseAddress = new Uri("https://net5-deployment-alumno-api.azurewebsites.net/api/");
             var request = clienteHttp.DeleteAsync("Alumnoes/EliminarAlumno/" + id).Result;
 
             if (request.IsSuccessStatusCode)
